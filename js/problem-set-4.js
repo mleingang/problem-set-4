@@ -209,10 +209,6 @@ function change() {
   var div = document.getElementById("output10")
   div.innerHTML = quarters + dimes + nickels + pennies;
 
-  if(amount >= 0.25){
-    var quarters = amount / 0.25;
-  }
-
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
