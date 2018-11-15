@@ -132,16 +132,18 @@ function fluidOunces() {
 
   /////////////////////////////////////////////////////// DO NOT MODIFY
   let input = prompt("Enter a non-negative integer."); // DO NOT MODIFY
+  let fluidOunces = input;                             // DO NOT MODIFY
   /////////////////////////////////////////////////////// DO NOT MODIFY
 
-  // You are free to modify the value of fluidOunces, which you'll
-  // likely need to do. Please do not modify the value of input.
+  let gallons = Math.floor(fluidOunces/128);
+  fluidOunces = fluidOunces%128;
+  let quarts = Math.floor(fluidOunces/32);
+  fluidOunces = fluidOunces%32;
+  let pints = fluidOunces/16;
+  fluidOunces = fluidOunces%16;
 
-  /////////////////////////// DO NOT MODIFY
-  let fluidOunces = input; // DO NOT MODIFY
-  /////////////////////////// DO NOT MODIFY
-
-  // WRITE YOUR EXERCISE 7 CODE HERE
+  var div = document.getElementById("output6");
+  div.innerHTML = `Kilometers: ${kilometers} Meters: ${meters} Centimeters: ${centimeters}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
