@@ -85,8 +85,16 @@ function inches() {
   let input = prompt("Enter a non-negative integer."); // DO NOT MODIFY
   let inches = input;                                  // DO NOT MODIFY
   /////////////////////////////////////////////////////// DO NOT MODIFY
+  let miles = Math.floor(inches/63360);
+  inches = inches%63360;
+  let yards = Math.floor(inches/36);
+  inches = inches%36;
+  let feet = Math.floor(inches/12);
+  inches = inches%12;
+  // let inches = inches ;
 
-  var div = document.getElementById("output5")
+  var div = document.getElementById("output5");
+  div.innerHTML = `Miles: ${miles} Yards: ${yards} Inches: ${inches}`;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
@@ -101,16 +109,15 @@ function centimeters() {
 
   /////////////////////////////////////////////////////// DO NOT MODIFY
   let input = prompt("Enter a non-negative integer."); // DO NOT MODIFY
+  let centimeters = input;                             // DO NOT MODIFY
   /////////////////////////////////////////////////////// DO NOT MODIFY
+  let kilometers = Math.floor(centimeters/100000);
+  centimeters = centimeters%100000;
+  let meters = Math.floor(centimeters/100);
+  centimeters = centimeters%100;
 
-  // You are free to modify the value of centimeters, which you'll
-  // likely need to do. Please do not modify the value of input.
-
-  /////////////////////////// DO NOT MODIFY
-  let centimeters = input; // DO NOT MODIFY
-  /////////////////////////// DO NOT MODIFY
-
-  // WRITE YOUR EXERCISE 6 CODE HERE
+  var div = document.getElementById("output6");
+  div.innerHTML = `Kilometers: ${kilometers} Meters: ${meters} Centimeters: ${centimeters}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
