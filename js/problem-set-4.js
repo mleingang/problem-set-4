@@ -139,11 +139,13 @@ function fluidOunces() {
   fluidOunces = fluidOunces%128;
   let quarts = Math.floor(fluidOunces/32);
   fluidOunces = fluidOunces%32;
-  let pints = fluidOunces/16;
+  let pints = Math.floor(fluidOunces/16);
   fluidOunces = fluidOunces%16;
+  let cups = Math.floor(fluidOunces/8);
+  fluidOunces = fluidOunces%8;
 
-  var div = document.getElementById("output6");
-  div.innerHTML = `Kilometers: ${kilometers} Meters: ${meters} Centimeters: ${centimeters}`;
+  var div = document.getElementById("output7");
+  div.innerHTML = `Gallons: ${gallons} Quarts: ${quarts} Pints: ${pints} Cups: ${cups} Fluid Ounces: ${fluidOunces}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
