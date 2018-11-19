@@ -94,7 +94,7 @@ function inches() {
   // let inches = inches ;
 
   var div = document.getElementById("output5");
-  div.innerHTML = `Miles: ${miles} </br> Yards: ${yards} </br> Inches: ${inches}`;
+  div.innerHTML = `Miles: ${miles}<br/>Yards: ${yards}<br/>Feet: ${feet}<br/>Inches: ${inches}`;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
@@ -117,7 +117,7 @@ function centimeters() {
   centimeters = centimeters%100;
 
   var div = document.getElementById("output6");
-  div.innerHTML = `Kilometers: ${kilometers} </br> Meters: ${meters} </br> Centimeters: ${centimeters}`;
+  div.innerHTML = `Kilometers: ${kilometers}<br/>Meters: ${meters}<br/>Centimeters: ${centimeters}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
@@ -145,7 +145,7 @@ function fluidOunces() {
   fluidOunces = fluidOunces%8;
 
   var div = document.getElementById("output7");
-  div.innerHTML = `Gallons: ${gallons} </br> Quarts: ${quarts} </br> Pints: ${pints} </br> Cups: ${cups} </br> Fluid Ounces: ${fluidOunces}`;
+  div.innerHTML = `Gallons: ${gallons}<br/>Quarts: ${quarts}<br/>Pints: ${pints}<br/>Cups: ${cups}<br/>Fluid Ounces: ${fluidOunces}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
@@ -175,7 +175,7 @@ function ounces() {
   ounces = ounces%16;
 
   var div = document.getElementById("output8");
-  div.innerHTML = `Tons: ${tons} </br> Pounds: ${pounds} </br> Ounces: ${ounces}`;
+  div.innerHTML = `Tons: ${tons}<br/>Pounds: ${pounds}<br/>Ounces: ${ounces}`;
 
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
@@ -202,7 +202,7 @@ function money() {
   pennies = pennies%5;
 
   var div = document.getElementById("output9");
-  div.innerHTML = `Dollars: ${dollars} </br> Quarters: ${quarters} </br> Dimes: ${dimes} </br> Nickels: ${nickels} </br> Pennies: ${pennies}`;
+  div.innerHTML = `Dollars: ${dollars}<br/>Quarters: ${quarters}<br/>Dimes: ${dimes}<br/>Nickels: ${nickels}<br/>Pennies: ${pennies}`;
 
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
@@ -225,17 +225,18 @@ function change() {
   ////////////////////// DO NOT MODIFY
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
-  let quarters = Math.floor(amount/0.25);
-  amount = amount%0.25;
-  let dimes = Math.floor(fluidOunces/32);
-  fluidOunces = fluidOunces%32;
-  let pints = Math.floor(fluidOunces/16);
-  fluidOunces = fluidOunces%16;
-  let cups = Math.floor(fluidOunces/8);
-  fluidOunces = fluidOunces%8;
+  amount = amount*100;
+  let quarters = Math.floor(amount/25);
+  amount = amount%25;
+  let dimes = Math.floor(amount/10);
+  amount = amount%10;
+  let nickels = Math.floor(amount/5);
+  amount = amount%5;
+  let pennies = amount
+  let coins = (quarters+dimes+nickels+pennies).toFixed(0);
 
-  var div = document.getElementById("output10")
-  div.innerHTML = quarters + dimes + nickels + pennies;
+  var div = document.getElementById("output10");
+  div.innerHTML = coins + " coins.";
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
