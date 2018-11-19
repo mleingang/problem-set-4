@@ -94,7 +94,7 @@ function inches() {
   // let inches = inches ;
 
   var div = document.getElementById("output5");
-  div.innerHTML = `Miles: ${miles} Yards: ${yards} Inches: ${inches}`;
+  div.innerHTML = `Miles: ${miles} </br> Yards: ${yards} </br> Inches: ${inches}`;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
@@ -117,7 +117,7 @@ function centimeters() {
   centimeters = centimeters%100;
 
   var div = document.getElementById("output6");
-  div.innerHTML = `Kilometers: ${kilometers} Meters: ${meters} Centimeters: ${centimeters}`;
+  div.innerHTML = `Kilometers: ${kilometers} </br> Meters: ${meters} </br> Centimeters: ${centimeters}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
@@ -145,7 +145,7 @@ function fluidOunces() {
   fluidOunces = fluidOunces%8;
 
   var div = document.getElementById("output7");
-  div.innerHTML = `Gallons: ${gallons} Quarts: ${quarts} Pints: ${pints} Cups: ${cups} Fluid Ounces: ${fluidOunces}`;
+  div.innerHTML = `Gallons: ${gallons} </br> Quarts: ${quarts} </br> Pints: ${pints} </br> Cups: ${cups} </br> Fluid Ounces: ${fluidOunces}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
@@ -169,7 +169,13 @@ function ounces() {
   let ounces = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 8 CODE HERE
+  let tons = Math.floor(ounces/32000);
+  ounces = ounces%32000;
+  let pounds = Math.floor(ounces/16);
+  ounces = ounces%16;
+
+  var div = document.getElementById("output8");
+  div.innerHTML = `Tons: ${tons} </br> Pounds: ${pounds} </br> Ounces: ${ounces}`;
 
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
@@ -184,16 +190,19 @@ function money() {
 
   /////////////////////////////////////////////////////// DO NOT MODIFY
   let input = prompt("Enter a non-negative integer."); // DO NOT MODIFY
+  let pennies = input;                                 // DO NOT MODIFY
   /////////////////////////////////////////////////////// DO NOT MODIFY
+  let dollars = Math.floor(pennies/100);
+  pennies = pennies%100;
+  let quarters = Math.floor(pennies/25);
+  pennies = pennies%25;
+  let dimes = Math.floor(pennies/10);
+  pennies = pennies%10;
+  let nickels = Math.floor(pennies/5);
+  pennies = pennies%5;
 
-  // You are free to modify the value of pennies, which you'll likely
-  // need to do. Please do not modify the value of input.
-
-  /////////////////////// DO NOT MODIFY
-  let pennies = input; // DO NOT MODIFY
-  /////////////////////// DO NOT MODIFY
-
-
+  var div = document.getElementById("output9");
+  div.innerHTML = `Dollars: ${dollars} </br> Quarters: ${quarters} </br> Dimes: ${dimes} </br> Nickels: ${nickels} </br> Pennies: ${pennies}`;
 
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
@@ -216,6 +225,14 @@ function change() {
   ////////////////////// DO NOT MODIFY
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
+  let quarters = Math.floor(amount/0.25);
+  amount = amount%0.25;
+  let dimes = Math.floor(fluidOunces/32);
+  fluidOunces = fluidOunces%32;
+  let pints = Math.floor(fluidOunces/16);
+  fluidOunces = fluidOunces%16;
+  let cups = Math.floor(fluidOunces/8);
+  fluidOunces = fluidOunces%8;
 
   var div = document.getElementById("output10")
   div.innerHTML = quarters + dimes + nickels + pennies;
