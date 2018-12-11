@@ -24,7 +24,7 @@ function helloAgain() {
 
     var div = document.getElementById("output2");
 
-    name = prompt("What is your name?")
+    name = prompt("What is your name?");
     alert("Hello, " + name + "!");
     div.innerHTML = "Hello, " + name + "!";
 
